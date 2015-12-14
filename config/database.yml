@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: ichange_dev
+  pool: 5
+  username: falcon_user
+  password: password
