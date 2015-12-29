@@ -1,1 +1,18 @@
-Welcome user.
+.stats
+  = render 'profile_stats'
+%h3 Update your activity
+%hr
+.status
+%ul
+  - current_user.activities.positives.each do |activity|
+    %li{style: 'color:green	'}
+      = activity.strength.description
+      = link_to 'Yes', update_activity_count_path(activity, 1), {method: :put, remote: true}
+      = link_to 'No', update_activity_count_path(activity, 0), {method: :put, remote: true}
+%hr
+%ul      
+  - current_user.activities.negatives.each do |activity|
+    %li{style: 'color:red	'}
+      = activity.weakness.description    
+      = link_to 'Yes', update_activity_count_path(activity, 0), {method: :put, remote: true}
+      = link_to 'No', update_activity_count_path(activity, 1), {method: :put, remote: true}

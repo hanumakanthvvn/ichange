@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
    match '/dashboard', to: 'dashboard#index', via: :get
 
+   put 'activities/:id/update/:value' => 'activities#update_count', as: :update_activity_count
+
+   resources :activities 
+
   root 'dashboard#home'
 
   # Example of regular route:

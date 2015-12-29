@@ -1,0 +1,11 @@
+.row
+  .col-md-12
+    .panel.panel-default
+      .panel-heading
+        .panel-title My (Strengths vs Weakness)
+      .panel-body
+        - pie_chart_data = current_user.activities.group(:count).count
+        - if pie_chart_data.values.sum == 0
+          No Activity
+        - else
+          = pie_chart({Strengths:  pie_chart_data[1], Weakness: pie_chart_data[0]}, library: { pieHole: 0.4 }, colors: ["Green", "#F5471D"]) 

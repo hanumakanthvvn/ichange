@@ -7,6 +7,7 @@ gem 'rails', '4.2.0'
 gem 'pg'
 gem 'devise', '3.4.1'
 gem 'haml-rails'
+gem 'chartkick'
 # Use SCSS for stylesheets
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
